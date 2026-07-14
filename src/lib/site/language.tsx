@@ -108,7 +108,7 @@ export const translations: Dict = {
     bn: "প্রতিটি লেনদেনে স্বচ্ছতা। যেখানে সম্ভব স্থানীয় নিয়োগ। প্রশাসনিক ব্যয়ে কোনো উদ্বৃত্ত নয়। ত্রৈমাসিক জনসাধারণ প্রতিবেদন।",
   },
   "about.timeline": { en: "Timeline", bn: "সময়রেখা" },
-  "about.leadership": { en: "Leadership", bn: "নেতৃত্ব" },
+  "about.leadership": { en: "Board of Directors", bn: "পরিচালনা পর্ষদ" },
   "about.tl.2019": { en: "Foundation established and formally registered.", bn: "ফাউন্ডেশন প্রতিষ্ঠিত ও আনুষ্ঠানিকভাবে নিবন্ধিত।" },
   "about.tl.2020": { en: "First emergency winter relief in northern Bangladesh; 4,200 families served.", bn: "উত্তর বাংলাদেশে প্রথম জরুরি শীতকালীন ত্রাণ; ৪,২০০ পরিবারকে সহায়তা।" },
   "about.tl.2021": { en: "Safe Water Initiative launched; first 60 tube wells installed.", bn: "নিরাপদ পানি উদ্যোগ শুরু; প্রথম ৬০টি নলকূপ স্থাপন।" },
