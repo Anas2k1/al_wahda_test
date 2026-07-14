@@ -15,7 +15,7 @@ import reliefImg from "@/assets/program-relief.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Al Wahda Foundation — For Unity, Through Service" },
+      { title: "Al Wahda Foundation — Serving Allah's creation to attain His pleasure." },
       {
         name: "description",
         content:

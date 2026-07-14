@@ -14,7 +14,7 @@ var import_jsx_runtime = require_jsx_runtime();
 var wahdalogo_default = "/assets/wahdalogo-B014b_AI.png";
 var site = {
 	name: "Al Wahda Foundation",
-	tagline: "For Unity, Through Service",
+	tagline: "Serving the creation for the pleasure of Allah",
 	description: "Al Wahda Foundation is a non-profit organization advancing education, humanitarian relief, and community welfare with integrity and care.",
 	email: "alwahdafoundationbd@gmail.com",
 	phone: "+880 1789-076-804",

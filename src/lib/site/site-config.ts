@@ -1,6 +1,6 @@
 export const site = {
   name: "Al Wahda Foundation",
-  tagline: "For Unity, Through Service",
+  tagline: "Serving Allah's creation to attain His pleasure.",
   description:
     "Al Wahda Foundation is a non-profit organization advancing education, humanitarian relief, and community welfare with integrity and care.",
   email: "alwahdafoundationbd@gmail.com",

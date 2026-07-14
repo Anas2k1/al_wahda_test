@@ -25,8 +25,11 @@ export const translations: Dict = {
 
   // Home
   "home.eyebrow": { en: "Established 2026", bn: "প্রতিষ্ঠিত ২০২৬" },
-  "home.title1": { en: "For unity, through", bn: "ঐক্যের জন্য," },
-  "home.titleEm": { en: "service", bn: "সেবার মাধ্যমে" },
+  "home.title1": {
+    en: "Serving Allah's creation to attain His pleasure.",
+    bn: "আল্লাহর সন্তুষ্টির জন্য সৃষ্টির সেবা।",
+  },
+  "home.titleEm": { en: "", bn: "" },
   "home.lead": {
     en: "Al Wahda Foundation is a non-profit dedicated to education, humanitarian relief, and community welfare — building dignified, lasting change in the places we serve.",
     bn: "আল ওয়াহদা ফাউন্ডেশন একটি অলাভজনক প্রতিষ্ঠান যা শিক্ষা, মানবিক সহায়তা এবং সমাজকল্যাণে নিবেদিত — যেখানে আমরা কাজ করি সেখানে মর্যাদাপূর্ণ ও টেকসই পরিবর্তন গড়ে তুলি।",

@@ -112,7 +112,7 @@ var Route$16 = createRootRouteWithContext()({
 				name: "viewport",
 				content: "width=device-width, initial-scale=1"
 			},
-			{ title: "Al Wahda Foundation — For Unity, Through Service" },
+			{ title: "Al Wahda Foundation — Serving the creation for the pleasure of Allah" },
 			{
 				name: "description",
 				content: "Al Wahda Foundation is a non-profit advancing education, humanitarian relief, and community welfare with integrity and care."
@@ -384,7 +384,7 @@ var Route$4 = createFileRoute("/about")({
 var $$splitComponentImporter$2 = () => import("./routes-ktbVab6w.mjs");
 var Route$3 = createFileRoute("/")({
 	head: () => ({ meta: [
-		{ title: "Al Wahda Foundation — For Unity, Through Service" },
+		{ title: "Al Wahda Foundation — Serving the creation for the pleasure of Allah" },
 		{
 			name: "description",
 			content: "A non-profit advancing education, humanitarian relief, and community welfare with integrity and care."

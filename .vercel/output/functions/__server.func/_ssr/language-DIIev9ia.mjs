@@ -70,12 +70,12 @@ var translations = {
 		bn: "প্রতিষ্ঠিত ২০২৬"
 	},
 	"home.title1": {
-		en: "For unity, through",
-		bn: "ঐক্যের জন্য,"
+		en: "Serving the creation",
+		bn: "আল্লাহর সন্তুষ্টির জন্য"
 	},
 	"home.titleEm": {
-		en: "service",
-		bn: "সেবার মাধ্যমে"
+		en: "for the pleasure of Allah",
+		bn: "সৃষ্টির সেবা।"
 	},
 	"home.lead": {
 		en: "Al Wahda Foundation is a non-profit dedicated to education, humanitarian relief, and community welfare — building dignified, lasting change in the places we serve.",

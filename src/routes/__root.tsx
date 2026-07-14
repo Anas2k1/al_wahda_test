@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Al Wahda Foundation — For Unity, Through Service" },
+      { title: "Al Wahda Foundation — Serving Allah's creation to attain His pleasure." },
       {
         name: "description",
         content:
