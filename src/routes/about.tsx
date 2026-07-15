@@ -7,8 +7,8 @@ import executiveMemberImage from "../assets/Executive Member_Misbahul Arifeen.jp
 import jointSecretaryImage from "../assets/Joint Secretary_MD Muhibbur Rahman Shujon.jpeg";
 import organizingSecretaryImage from "../assets/Organizing Secretary_Maulana Emaduddin Al Madani .jpeg";
 import secretaryImage from "../assets/Secretary_Mustafiz Rahmani.jpg";
-import seniorViceChairmanImage from "../assets/Senior vice chairman_Maulana Sadikur Rahman Azhari.jpg";
-import treasurerImage from "../assets/Tresurer_Maulana Mustafizur Rahman Shahin.jpeg";
+import seniorViceChairmanImage from "../assets/Senior vice chairman_Mawlana Sadikur Rahman Azhari.jpg";
+import treasurerImage from "../assets/Tresurer_Mawlana Mustafizur Rahman Shahin.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
