@@ -2,13 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHeader } from "@/lib/site/PageShell";
 import { Ornament } from "@/lib/site/Ornament";
 import { useLanguage } from "@/lib/site/language";
-import chairmanImage from "../assets/Chairman_ Hafez Mawlana Lutfor Rahman.jpeg";
+import chairmanImage from "../assets/Chairman_ Hafez Maulana Lutfor Rahman.jpeg";
 import executiveMemberImage from "../assets/Executive Member_Misbahul Arifeen.jpeg";
 import jointSecretaryImage from "../assets/Joint Secretary_MD Muhibbur Rahman Shujon.jpeg";
-import organizingSecretaryImage from "../assets/Organizing Secretary_Mawlana Emaduddin Al Madani .jpeg";
+import organizingSecretaryImage from "../assets/Organizing Secretary_Maulana Emaduddin Al Madani .jpeg";
 import secretaryImage from "../assets/Secretary_Mustafiz Rahmani.jpg";
-import seniorViceChairmanImage from "../assets/Senior vice chairman_Mawlana Sadikur Rahman Azhari.jpg";
-import treasurerImage from "../assets/Tresurer_Mawlana Mustafizur Rahman Shahin.jpeg";
+import seniorViceChairmanImage from "../assets/Senior vice chairman_Maulana Sadikur Rahman Azhari.jpg";
+import treasurerImage from "../assets/Tresurer_Maulana Mustafizur Rahman Shahin.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -46,14 +46,14 @@ function AboutPage() {
   const leaders = [
     {
       image: chairmanImage,
-      nameEn: "Hafez Mawlana Lutfor Rahman",
+      nameEn: "Hafez Maulana Lutfor Rahman",
       nameBn: "হাফেজ মাওলানা লুতফর রহমান",
       roleEn: "Chairman",
       roleBn: "চেয়ারম্যান",
     },
     {
       image: seniorViceChairmanImage,
-      nameEn: "Mawlana Sadikur Rahman Azhari",
+      nameEn: "Maulana Sadikur Rahman Azhari",
       nameBn: "মাওলানা সাদিকুর রহমান আযহারী",
       roleEn: "Senior Vice Chairman",
       roleBn: "সিনিয়র ভাইস চেয়ারম্যান",
@@ -67,7 +67,7 @@ function AboutPage() {
     },
     {
       image: organizingSecretaryImage,
-      nameEn: "Mawlana Emaduddin Al Madani",
+      nameEn: "Maulana Emaduddin Al Madani",
       nameBn: "মাওলানা এমাদউদ্দিন আল মাদানি",
       roleEn: "Organizing Secretary",
       roleBn: "সংগঠক সম্পাদক",
@@ -88,7 +88,7 @@ function AboutPage() {
     },
     {
       image: treasurerImage,
-      nameEn: "Mawlana Mustafizur Rahman Shahin",
+      nameEn: "Maulana Mustafizur Rahman Shahin",
       nameBn: "মাওলানা মুজতাফিজুর রহমান শাহিন",
       roleEn: "Treasurer",
       roleBn: "কোষাধ্যক্ষ",

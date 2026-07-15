@@ -3,13 +3,13 @@ import { r as useLanguage } from "./language-BgaFhHHY.mjs";
 import { n as PageHeader, r as PageShell, t as Ornament } from "./PageShell-DWXiCHXU.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/about-BoSSD0Ub.js
 var import_jsx_runtime = require_jsx_runtime();
-var Chairman__Hafez_Mawlana_Lutfor_Rahman_default = "/assets/Chairman_%20Hafez%20Mawlana%20Lutfor%20Rahman-DhXQBb0i.jpeg";
+var Chairman__Hafez_Maulana_Lutfor_Rahman_default = "/assets/Chairman_%20Hafez%20Maulana%20Lutfor%20Rahman-DhXQBb0i.jpeg";
 var Executive_Member_Misbahul_Arifeen_default = "/assets/Executive%20Member_Misbahul%20Arifeen-KJJvjLW1.jpeg";
 var Joint_Secretary_MD_Muhibbur_Rahman_Shujon_default = "/assets/Joint%20Secretary_MD%20Muhibbur%20Rahman%20Shujon-BvFC9PeI.jpeg";
-var Organizing_Secretary_Mawlana_Emaduddin_Al_Madani__default = "/assets/Organizing%20Secretary_Mawlana%20Emaduddin%20Al%20Madani%20-Dg7hoLoF.jpeg";
+var Organizing_Secretary_Maulana_Emaduddin_Al_Madani__default = "/assets/Organizing%20Secretary_Maulana%20Emaduddin%20Al%20Madani%20-Dg7hoLoF.jpeg";
 var Secretary_Mustafiz_Rahmani_default = "/assets/Secretary_Mustafiz%20Rahmani-Dpc8Q2e4.jpg";
-var Senior_vice_chairman_Mawlana_Sadikur_Rahman_Azhari_default = "/assets/Senior%20vice%20chairman_Mawlana%20Sadikur%20Rahman%20Azhari-BhlEi0hE.jpg";
-var Tresurer_Mawlana_Mustafizur_Rahman_Shahin_default = "/assets/Tresurer_Mawlana%20Mustafizur%20Rahman%20Shahin-yPFTzbEp.jpeg";
+var Senior_vice_chairman_Maulana_Sadikur_Rahman_Azhari_default = "/assets/Senior%20vice%20chairman_Maulana%20Sadikur%20Rahman%20Azhari-BhlEi0hE.jpg";
+var Tresurer_Maulana_Mustafizur_Rahman_Shahin_default = "/assets/Tresurer_Maulana%20Mustafizur%20Rahman%20Shahin-yPFTzbEp.jpeg";
 function AboutPage() {
 	const { t, lang } = useLanguage();
 	const blocks = [
@@ -54,15 +54,15 @@ function AboutPage() {
 	];
 	const leaders = [
 		{
-			image: Chairman__Hafez_Mawlana_Lutfor_Rahman_default,
-			nameEn: "Hafez Mawlana Lutfor Rahman",
+			image: Chairman__Hafez_Maulana_Lutfor_Rahman_default,
+			nameEn: "Hafez Maulana Lutfor Rahman",
 			nameBn: "হাফেজ মাওলানা লুতফর রহমান",
 			roleEn: "Chairman",
 			roleBn: "চেয়ারম্যান"
 		},
 		{
-			image: Senior_vice_chairman_Mawlana_Sadikur_Rahman_Azhari_default,
-			nameEn: "Mawlana Sadikur Rahman Azhari",
+			image: Senior_vice_chairman_Maulana_Sadikur_Rahman_Azhari_default,
+			nameEn: "Maulana Sadikur Rahman Azhari",
 			nameBn: "মাওলানা সাদিকুর রহমান আযহারী",
 			roleEn: "Senior Vice Chairman",
 			roleBn: "সিনিয়র ভাইস চেয়ারম্যান"
@@ -75,8 +75,8 @@ function AboutPage() {
 			roleBn: "নির্বাহী সদস্য"
 		},
 		{
-			image: Organizing_Secretary_Mawlana_Emaduddin_Al_Madani__default,
-			nameEn: "Mawlana Emaduddin Al Madani",
+			image: Organizing_Secretary_Maulana_Emaduddin_Al_Madani__default,
+			nameEn: "Maulana Emaduddin Al Madani",
 			nameBn: "মাওলানা এমাদউদ্দিন আল মাদানি",
 			roleEn: "Organizing Secretary",
 			roleBn: "সংগঠক সম্পাদক"
@@ -96,8 +96,8 @@ function AboutPage() {
 			roleBn: "সম্পাদক"
 		},
 		{
-			image: Tresurer_Mawlana_Mustafizur_Rahman_Shahin_default,
-			nameEn: "Mawlana Mustafizur Rahman Shahin",
+			image: Tresurer_Maulana_Mustafizur_Rahman_Shahin_default,
+			nameEn: "Maulana Mustafizur Rahman Shahin",
 			nameBn: "মাওলানা মুজতাফিজুর রহমান শাহিন",
 			roleEn: "Treasurer",
 			roleBn: "কোষাধ্যক্ষ"
