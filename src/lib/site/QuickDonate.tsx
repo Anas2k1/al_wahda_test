@@ -5,7 +5,7 @@ import { createDonationCheckout } from "@/lib/donations.functions";
 import { useLanguage } from "./language";
 
 const FUND_KEYS = ["qd.f.general", "qd.f.education", "qd.f.water", "qd.f.relief", "qd.f.orphan"] as const;
-const PRESETS = [25, 50, 100, 250];
+const PRESETS = [200, 500, 1000, 2000];
 type Recurrence = "one_time" | "monthly" | "weekly";
 
 export function QuickDonate() {
@@ -13,7 +13,7 @@ export function QuickDonate() {
   const checkout = useServerFn(createDonationCheckout);
   const [fundIdx, setFundIdx] = useState(0);
   const [recurrence, setRecurrence] = useState<Recurrence>("one_time");
-  const [amount, setAmount] = useState<number>(50);
+  const [amount, setAmount] = useState<number>(500);
   const [custom, setCustom] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

@@ -5,7 +5,7 @@ import { t as LanguageProvider } from "./language-BgaFhHHY.mjs";
 import { c as HeadContent, d as createRouter, f as Outlet, g as Link, h as createRootRouteWithContext, m as createFileRoute, p as lazyRouteComponent, s as Scripts, v as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-nhVco6QM.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-C41ZRt32.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-47erl079.css";
@@ -362,7 +362,7 @@ var Route$5 = createFileRoute("/activities")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./about-CPSA_x0Q.mjs");
+var $$splitComponentImporter$3 = () => import("./about-BoSSD0Ub.mjs");
 var Route$4 = createFileRoute("/about")({
 	head: () => ({ meta: [
 		{ title: "About — Al Wahda Foundation" },
@@ -381,7 +381,7 @@ var Route$4 = createFileRoute("/about")({
 	] }),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./routes-Bn3EJhsm.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-BsOKeCdE.mjs");
 var Route$3 = createFileRoute("/")({
 	head: () => ({ meta: [
 		{ title: "Al Wahda Foundation — Serving Allah's creation to attain His pleasure." },

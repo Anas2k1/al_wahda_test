@@ -15,7 +15,7 @@ import { t as useEmblaCarousel } from "../_libs/embla-carousel-react+[...].mjs";
 import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { t as Slot } from "../_libs/radix-ui__react-slot.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Bn3EJhsm.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BsOKeCdE.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AnimatedCounter({ value, duration = 1.6, prefix = "", suffix = "" }) {
@@ -75,17 +75,17 @@ var FUND_KEYS = [
 	"qd.f.orphan"
 ];
 var PRESETS = [
-	25,
-	50,
-	100,
-	250
+	200,
+	500,
+	1e3,
+	2e3
 ];
 function QuickDonate() {
 	const { t } = useLanguage();
 	const checkout = useServerFn(createDonationCheckout);
 	const [fundIdx, setFundIdx] = (0, import_react.useState)(0);
 	const [recurrence, setRecurrence] = (0, import_react.useState)("one_time");
-	const [amount, setAmount] = (0, import_react.useState)(50);
+	const [amount, setAmount] = (0, import_react.useState)(500);
 	const [custom, setCustom] = (0, import_react.useState)("");
 	const [loading, setLoading] = (0, import_react.useState)(false);
 	const [error, setError] = (0, import_react.useState)(null);

@@ -85,8 +85,8 @@ export const translations: Dict = {
   // About
   "about.eyebrow": { en: "About", bn: "পরিচিতি" },
   "about.title": {
-    en: "A small organization with a single commitment.",
-    bn: "একটি ছোট প্রতিষ্ঠান, একটিমাত্র অঙ্গীকার।",
+    en: "An organization with a single commitment.",
+    bn: "একটি প্রতিষ্ঠান, একটিমাত্র অঙ্গীকার।",
   },
   "about.lead": {
     en: "Al Wahda Foundation was founded in 2019 to advance education, humanitarian relief, and community welfare. We work in partnership with local teams in eighteen countries.",

@@ -99,6 +99,24 @@ function AboutPage() {
     <PageShell>
       <PageHeader eyebrow={t("about.eyebrow")} title={t("about.title")} lead={t("about.lead")} />
 
+      <section className="container-prose py-20">
+        <h2 className="font-serif text-3xl text-primary mb-10">{t("about.leadership")}</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {leaders.map((p) => (
+            <div key={p.nameEn} className="rounded-2xl border border-border bg-card p-4 shadow-soft overflow-hidden">
+              <img
+                src={p.image}
+                alt={lang === "bn" ? p.nameBn : p.nameEn}
+                className="h-72 w-full object-cover rounded-xl mb-4"
+                loading="lazy"
+              />
+              <h3 className="font-serif text-xl text-primary">{lang === "bn" ? p.nameBn : p.nameEn}</h3>
+              <p className="text-sm text-muted-foreground mt-1">{lang === "bn" ? p.roleBn : p.roleEn}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="container-prose py-20 grid md:grid-cols-3 gap-12">
         {blocks.map((b) => (
           <div key={b.t}>
@@ -123,24 +141,6 @@ function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="container-prose py-20">
-        <h2 className="font-serif text-3xl text-primary mb-10">{t("about.leadership")}</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {leaders.map((p) => (
-            <div key={p.nameEn} className="rounded-2xl border border-border bg-card p-4 shadow-soft overflow-hidden">
-              <img
-                src={p.image}
-                alt={lang === "bn" ? p.nameBn : p.nameEn}
-                className="h-72 w-full object-cover rounded-xl mb-4"
-                loading="lazy"
-              />
-              <h3 className="font-serif text-xl text-primary">{lang === "bn" ? p.nameBn : p.nameEn}</h3>
-              <p className="text-sm text-muted-foreground mt-1">{lang === "bn" ? p.roleBn : p.roleEn}</p>
-            </div>
-          ))}
         </div>
       </section>
     </PageShell>

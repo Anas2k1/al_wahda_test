@@ -1,7 +1,7 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { r as useLanguage } from "./language-BgaFhHHY.mjs";
 import { n as PageHeader, r as PageShell, t as Ornament } from "./PageShell-DWXiCHXU.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/about-CPSA_x0Q.js
+//#region node_modules/.nitro/vite/services/ssr/assets/about-BoSSD0Ub.js
 var import_jsx_runtime = require_jsx_runtime();
 var Chairman__Hafez_Mawlana_Lutfor_Rahman_default = "/assets/Chairman_%20Hafez%20Mawlana%20Lutfor%20Rahman-DhXQBb0i.jpeg";
 var Executive_Member_Misbahul_Arifeen_default = "/assets/Executive%20Member_Misbahul%20Arifeen-KJJvjLW1.jpeg";
@@ -109,6 +109,34 @@ function AboutPage() {
 			title: t("about.title"),
 			lead: t("about.lead")
 		}),
+		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+			className: "container-prose py-20",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+				className: "font-serif text-3xl text-primary mb-10",
+				children: t("about.leadership")
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-6",
+				children: leaders.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "rounded-2xl border border-border bg-card p-4 shadow-soft overflow-hidden",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: p.image,
+							alt: lang === "bn" ? p.nameBn : p.nameEn,
+							className: "h-72 w-full object-cover rounded-xl mb-4",
+							loading: "lazy"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							className: "font-serif text-xl text-primary",
+							children: lang === "bn" ? p.nameBn : p.nameEn
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-sm text-muted-foreground mt-1",
+							children: lang === "bn" ? p.roleBn : p.roleEn
+						})
+					]
+				}, p.nameEn))
+			})]
+		}),
 		/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 			className: "container-prose py-20 grid md:grid-cols-3 gap-12",
 			children: blocks.map((b) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
@@ -150,34 +178,6 @@ function AboutPage() {
 					}, m.y))
 				})]
 			})
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-			className: "container-prose py-20",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-				className: "font-serif text-3xl text-primary mb-10",
-				children: t("about.leadership")
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "grid sm:grid-cols-2 lg:grid-cols-3 gap-6",
-				children: leaders.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "rounded-2xl border border-border bg-card p-4 shadow-soft overflow-hidden",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: p.image,
-							alt: lang === "bn" ? p.nameBn : p.nameEn,
-							className: "h-72 w-full object-cover rounded-xl mb-4",
-							loading: "lazy"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "font-serif text-xl text-primary",
-							children: lang === "bn" ? p.nameBn : p.nameEn
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-sm text-muted-foreground mt-1",
-							children: lang === "bn" ? p.roleBn : p.roleEn
-						})
-					]
-				}, p.nameEn))
-			})]
 		})
 	] });
 }
