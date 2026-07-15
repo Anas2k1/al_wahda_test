@@ -7,7 +7,7 @@ const emailSchema = z.string().trim().toLowerCase().email().max(254);
 const newsletterSchema = z.object({ email: emailSchema });
 
 export const subscribeNewsletter = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => newsletterSchema.parse(data))
+  .validator((data: unknown) => newsletterSchema.parse(data))
   .handler(async ({ data }) => {
     console.info("[newsletter] submission accepted", { email: data.email });
     return { ok: true };
@@ -22,7 +22,7 @@ const contactSchema = z.object({
 });
 
 export const submitContact = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => contactSchema.parse(data))
+  .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
     console.info("[contact] message accepted", data);
     return { ok: true };
@@ -39,7 +39,7 @@ const volunteerSchema = z.object({
 });
 
 export const submitVolunteer = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => volunteerSchema.parse(data))
+  .validator((data: unknown) => volunteerSchema.parse(data))
   .handler(async ({ data }) => {
     console.info("[volunteer] application accepted", data);
     return { ok: true };

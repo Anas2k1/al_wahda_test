@@ -14,7 +14,7 @@ const donateSchema = z.object({
 });
 
 export const createDonationCheckout = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => donateSchema.parse(data))
+  .validator((data: unknown) => donateSchema.parse(data))
   .handler(async ({ data }) => {
     const key = process.env.STRIPE_SECRET_KEY;
     if (!key) {

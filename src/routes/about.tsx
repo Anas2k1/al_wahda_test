@@ -2,6 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHeader } from "@/lib/site/PageShell";
 import { Ornament } from "@/lib/site/Ornament";
 import { useLanguage } from "@/lib/site/language";
+import chairmanImage from "../assets/Chairman_ Hafez Mawlana Lutfor Rahman.jpeg";
+import executiveMemberImage from "../assets/Executive Member_Misbahul Arifeen.jpeg";
+import jointSecretaryImage from "../assets/Joint Secretary_MD Muhibbur Rahman Shujon.jpeg";
+import organizingSecretaryImage from "../assets/Organizing Secretary_Mawlana Emaduddin Al Madani .jpeg";
+import secretaryImage from "../assets/Secretary_Mustafiz Rahmani.jpg";
+import seniorViceChairmanImage from "../assets/Senior vice chairman_Mawlana Sadikur Rahman Azhari.jpg";
+import treasurerImage from "../assets/Tresurer_Mawlana Mustafizur Rahman Shahin.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -19,7 +26,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const blocks = [
     { t: t("about.mission"), d: t("about.missionText") },
@@ -37,12 +44,55 @@ function AboutPage() {
   ];
 
   const leaders = [
-    { n: "Dr. Yusuf Karim", r: t("about.role.founder") },
-    { n: "Amina Hadid", r: t("about.role.exec") },
-    { n: "Tariq Hassan", r: t("about.role.programs") },
-    { n: "Layla Othman", r: t("about.role.finance") },
-    { n: "Saif Rahman", r: t("about.role.field") },
-    { n: "Noor Aziz", r: t("about.role.comms") },
+    {
+      image: chairmanImage,
+      nameEn: "Hafez Mawlana Lutfor Rahman",
+      nameBn: "হাফেজ মাওলানা লুতফর রহমান",
+      roleEn: "Chairman",
+      roleBn: "চেয়ারম্যান",
+    },
+    {
+      image: seniorViceChairmanImage,
+      nameEn: "Mawlana Sadikur Rahman Azhari",
+      nameBn: "মাওলানা সাদিকুর রহমান আযহারী",
+      roleEn: "Senior Vice Chairman",
+      roleBn: "সিনিয়র ভাইস চেয়ারম্যান",
+    },
+    {
+      image: executiveMemberImage,
+      nameEn: "Misbahul Arifeen",
+      nameBn: "মিসবাহুলআরেফীন",
+      roleEn: "Executive Member",
+      roleBn: "নির্বাহী সদস্য",
+    },
+    {
+      image: organizingSecretaryImage,
+      nameEn: "Mawlana Emaduddin Al Madani",
+      nameBn: "মাওলানা এমাদউদ্দিন আল মাদানি",
+      roleEn: "Organizing Secretary",
+      roleBn: "সংগঠক সম্পাদক",
+    },
+    {
+      image: jointSecretaryImage,
+      nameEn: "MD Muhibbur Rahman Shujon",
+      nameBn: "এমডি মুহিবুর রহমান সুজন",
+      roleEn: "Joint Secretary",
+      roleBn: "যুগ্ম সম্পাদক",
+    },
+    {
+      image: secretaryImage,
+      nameEn: "Mustafiz Rahmani",
+      nameBn: "মোস্তাফিজ রহমানি",
+      roleEn: "Secretary",
+      roleBn: "সম্পাদক",
+    },
+    {
+      image: treasurerImage,
+      nameEn: "Mawlana Mustafizur Rahman Shahin",
+      nameBn: "মাওলানা মুজতাফিজুর রহমান শাহিন",
+      roleEn: "Treasurer",
+      roleBn: "কোষাধ্যক্ষ",
+    },
   ];
 
   return (
@@ -78,14 +128,17 @@ function AboutPage() {
 
       <section className="container-prose py-20">
         <h2 className="font-serif text-3xl text-primary mb-10">{t("about.leadership")}</h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {leaders.map((p) => (
-            <div key={p.n} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
-              <div className="size-14 rounded-full bg-muted grid place-items-center font-serif text-xl text-primary mb-4">
-                {p.n.split(" ").map((s) => s[0]).slice(0, 2).join("")}
-              </div>
-              <h3 className="font-serif text-xl text-primary">{p.n}</h3>
-              <p className="text-sm text-muted-foreground mt-1">{p.r}</p>
+            <div key={p.nameEn} className="rounded-2xl border border-border bg-card p-4 shadow-soft overflow-hidden">
+              <img
+                src={p.image}
+                alt={lang === "bn" ? p.nameBn : p.nameEn}
+                className="h-72 w-full object-cover rounded-xl mb-4"
+                loading="lazy"
+              />
+              <h3 className="font-serif text-xl text-primary">{lang === "bn" ? p.nameBn : p.nameEn}</h3>
+              <p className="text-sm text-muted-foreground mt-1">{lang === "bn" ? p.roleBn : p.roleEn}</p>
             </div>
           ))}
         </div>
