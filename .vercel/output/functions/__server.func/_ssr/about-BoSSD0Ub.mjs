@@ -84,7 +84,7 @@ function AboutPage() {
 		{
 			image: Joint_Secretary_MD_Muhibbur_Rahman_Shujon_default,
 			nameEn: "MD Muhibbur Rahman Shujon",
-			nameBn: "এমডি মুহিবুর রহমান সুজন",
+			nameBn: "এমডি মুহিব্বুর  রহমান সুজন",
 			roleEn: "Joint Secretary",
 			roleBn: "যুগ্ম সম্পাদক"
 		},
