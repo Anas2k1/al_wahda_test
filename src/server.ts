@@ -37,18 +37,37 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
+function withNoStoreHeaders(response: Response): Response {
+  const headers = new Headers(response.headers);
+  const contentType = headers.get("content-type") ?? "";
+
+  if (contentType.includes("text/html") || contentType.includes("application/json")) {
+    headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+    headers.set("Pragma", "no-cache");
+    headers.set("Expires", "0");
+  }
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return withNoStoreHeaders(await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
-      return new Response(renderErrorPage(), {
-        status: 500,
-        headers: { "content-type": "text/html; charset=utf-8" },
-      });
+      return withNoStoreHeaders(
+        new Response(renderErrorPage(), {
+          status: 500,
+          headers: { "content-type": "text/html; charset=utf-8" },
+        }),
+      );
     }
   },
 };
