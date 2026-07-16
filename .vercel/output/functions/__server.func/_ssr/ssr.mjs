@@ -53,7 +53,7 @@ function renderErrorPage() {
 }
 var serverEntryPromise;
 async function getServerEntry() {
-	if (!serverEntryPromise) serverEntryPromise = import("./server-Db7KePs9.mjs").then((m) => m.default ?? m);
+	if (!serverEntryPromise) serverEntryPromise = import("./server-267WIGto.mjs").then((m) => m.default ?? m);
 	return serverEntryPromise;
 }
 async function normalizeCatastrophicSsrResponse(response) {
@@ -67,15 +67,29 @@ async function normalizeCatastrophicSsrResponse(response) {
 		headers: { "content-type": "text/html; charset=utf-8" }
 	});
 }
+function withNoStoreHeaders(response) {
+	const headers = new Headers(response.headers);
+	const contentType = headers.get("content-type") ?? "";
+	if (contentType.includes("text/html") || contentType.includes("application/json")) {
+		headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+		headers.set("Pragma", "no-cache");
+		headers.set("Expires", "0");
+	}
+	return new Response(response.body, {
+		status: response.status,
+		statusText: response.statusText,
+		headers
+	});
+}
 var server_default = { async fetch(request, env, ctx) {
 	try {
-		return await normalizeCatastrophicSsrResponse(await (await getServerEntry()).fetch(request, env, ctx));
+		return withNoStoreHeaders(await normalizeCatastrophicSsrResponse(await (await getServerEntry()).fetch(request, env, ctx)));
 	} catch (error) {
 		console.error(error);
-		return new Response(renderErrorPage(), {
+		return withNoStoreHeaders(new Response(renderErrorPage(), {
 			status: 500,
 			headers: { "content-type": "text/html; charset=utf-8" }
-		});
+		}));
 	}
 } };
 //#endregion
