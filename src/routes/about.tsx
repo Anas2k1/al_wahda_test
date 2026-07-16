@@ -6,7 +6,7 @@ import chairmanImage from "../assets/Chairman_ Hafez Maulana Lutfor Rahman.jpeg"
 import executiveMemberImage from "../assets/Executive Member_Misbahul Arifeen.jpeg";
 import jointSecretaryImage from "../assets/Joint Secretary_MD Muhibbur Rahman Shujon.jpeg";
 import organizingSecretaryImage from "../assets/Organizing Secretary_Maulana Emaduddin Al Madani .jpeg";
-import secretaryImage from "../assets/Secretary_Mustafiz Rahmani.jpg";
+import secretaryImage from "../assets/Secretary_Mustafiz Rahmani.jpeg";
 import seniorViceChairmanImage from "../assets/Senior vice chairman_Mawlana Sadikur Rahman Azhari.jpg";
 import treasurerImage from "../assets/Tresurer_Mawlana Mustafizur Rahman Shahin.jpeg";
 
@@ -47,7 +47,7 @@ function AboutPage() {
     {
       image: chairmanImage,
       nameEn: "Hafez Maulana Lutfor Rahman",
-      nameBn: "হাফেজ মাওলানা লুতফর রহমান",
+      nameBn: "হাফেজ মাওলানা লুৎফর রহমান",
       roleEn: "Chairman",
       roleBn: "চেয়ারম্যান",
     },

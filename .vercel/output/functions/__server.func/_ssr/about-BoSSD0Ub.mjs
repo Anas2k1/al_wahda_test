@@ -56,7 +56,7 @@ function AboutPage() {
 		{
 			image: Chairman__Hafez_Maulana_Lutfor_Rahman_default,
 			nameEn: "Hafez Maulana Lutfor Rahman",
-			nameBn: "হাফেজ মাওলানা লুতফর রহমান",
+			nameBn: "হাফেজ মাওলানা লুৎফর রহমান",
 			roleEn: "Chairman",
 			roleBn: "চেয়ারম্যান"
 		},
