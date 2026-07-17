@@ -6,7 +6,7 @@ export const site = {
   email: "alwahdafoundationbd@gmail.com",
   phone: "+880 1789-076-804",
   address: "৩৭/২ পুরানা পল্টন, ফায়েনাজ টাওয়ার, (লিফটের ০৮) কালভার্ট রোড, পল্টন, ঢাকা-১০০০",
-  registration: "Charity Registration No. AWF-2019-04412",
+  registration: "Charity Registration No. S-14903/2026",
   social: {
     instagram: "https://instagram.com",
     facebook: "https://facebook.com",

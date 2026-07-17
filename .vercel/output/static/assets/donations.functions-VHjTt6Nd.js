@@ -1,1 +1,0 @@
-import{u as e}from"./PageShell-DBDhHTBo.js";import{l as t}from"./index-3YLDLAjA.js";var n=e({method:`POST`}).handler(t(`df31ee0400172821b07265ec104b0d18c1608928081b06e1bfe6b6d4b117609f`));export{n as t};

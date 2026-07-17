@@ -421,12 +421,12 @@ export const translations: Dict = {
     bn: "আল ওয়াহদা ফাউন্ডেশন একটি অলাভজনক প্রতিষ্ঠান যা সততা ও যত্নের সাথে শিক্ষা, মানবিক ত্রাণ এবং সমাজকল্যাণ এগিয়ে নিয়ে যায়।",
   },
   "site.registration": {
-    en: "Charity Registration No. ",
-    bn: "চ্যারিটি নিবন্ধন নং ",
+    en: "Charity Registration No. S-14903/2026 ",
+    bn: "চ্যারিটি নিবন্ধন নং S-14903/2026 ",
   },
   "site.address": {
-    en: "Dhaka, Bangladesh",
-    bn: "ঢাকা, বাংলাদেশ",
+    en: "37/2 Purana Paltan, Fayenaz Tower (Lift 08), Calvert Road, Paltan, Dhaka-1000",
+    bn: "37/2 পুরানা পল্টন, ফায়েনাজ টাওয়ার (লিফট 08), ক্যালভার্ট রোড, পল্টন, ঢাকা-1000",
   },
 
   // QuickDonate
