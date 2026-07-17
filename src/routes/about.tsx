@@ -4,7 +4,7 @@ import { Ornament } from "@/lib/site/Ornament";
 import { useLanguage } from "@/lib/site/language";
 import chairmanImage from "../assets/Chairman_ Hafez Maulana Lutfor Rahman.jpg";
 import executiveMemberImage from "../assets/Executive Member_Misbahul Arifeen.jpeg";
-import jointSecretaryImage from "../assets/Joint Secretary_MD Muhibbur Rahman Shujon.jpeg";
+import jointSecretaryImage from "../assets/Joint Secretary_MD Muhibbur Rahman Shujon.jpg";
 import organizingSecretaryImage from "../assets/Organizing Secretary_Maulana Emaduddin Al Madani .jpg";
 import secretaryImage from "../assets/Secretary_Mustafiz Rahmani.jpeg";
 import seniorViceChairmanImage from "../assets/Senior vice chairman_Mawlana Sadikur Rahman Azhari.jpg";
@@ -59,11 +59,11 @@ function AboutPage() {
       roleBn: "সিনিয়র ভাইস চেয়ারম্যান",
     },
     {
-      image: executiveMemberImage,
-      nameEn: "Misbahul Arifeen",
-      nameBn: "মিসবাহুলআরেফীন",
-      roleEn: "Executive Member",
-      roleBn: "নির্বাহী সদস্য",
+      image: secretaryImage,
+      nameEn: "Mustafiz Rahmani",
+      nameBn: "মোস্তাফিজ রহমানি",
+      roleEn: "Secretary",
+      roleBn: "সম্পাদক",
     },
     {
       image: organizingSecretaryImage,
@@ -80,18 +80,18 @@ function AboutPage() {
       roleBn: "যুগ্ম সম্পাদক",
     },
     {
-      image: secretaryImage,
-      nameEn: "Mustafiz Rahmani",
-      nameBn: "মোস্তাফিজ রহমানি",
-      roleEn: "Secretary",
-      roleBn: "সম্পাদক",
-    },
-    {
       image: treasurerImage,
       nameEn: "Maulana Mustafizur Rahman Shahin",
-      nameBn: "মাওলানা মুজতাফিজুর রহমান শাহিন",
+      nameBn: "মাওলানা মুস্তাফিজুর রহমান শাহীন",
       roleEn: "Treasurer",
       roleBn: "কোষাধ্যক্ষ",
+    },
+    {
+      image: executiveMemberImage,
+      nameEn: "Misbahul Arifeen",
+      nameBn: "মিসবাহুলআরেফীন",
+      roleEn: "Executive Member",
+      roleBn: "নির্বাহী সদস্য",
     },
   ];
 
