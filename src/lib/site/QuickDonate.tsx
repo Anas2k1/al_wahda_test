@@ -15,12 +15,21 @@ export function QuickDonate() {
   const [recurrence, setRecurrence] = useState<Recurrence>("one_time");
   const [amount, setAmount] = useState<number>(500);
   const [custom, setCustom] = useState<string>("");
+  const [paymentMethod, setPaymentMethod] = useState<"bank" | "bkash" | "nagad" | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
+    if (!paymentMethod) return;
+    if (paymentMethod !== "bank") {
+      const comingSoonMessage = paymentMethod === "bkash"
+        ? `${t("donate.paymentComingSoon")} — ${t("donate.paymentBkashSoon")}`
+        : `${t("donate.paymentComingSoon")} — ${t("donate.paymentNagadSoon")}`;
+      setError(comingSoonMessage);
+      return;
+    }
     const finalAmount = custom ? Number(custom) : amount;
     if (!finalAmount || finalAmount < 1) {
       setError(t("qd.errMin"));
@@ -121,13 +130,51 @@ export function QuickDonate() {
         />
       </div>
 
+      <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+        {t("donate.paymentMethod")}
+      </label>
+      <div className="grid grid-cols-3 gap-2 mb-4">
+        {[
+          { value: "bank", label: t("donate.paymentBank") },
+          { value: "bkash", label: t("donate.paymentBkash") },
+          { value: "nagad", label: t("donate.paymentNagad") },
+        ].map((option) => (
+          <button
+            key={option.value}
+            type="button"
+            onClick={() => setPaymentMethod(option.value as typeof paymentMethod)}
+            className={`rounded-lg border px-2.5 py-2 text-xs font-medium transition-colors ${paymentMethod === option.value ? "border-primary bg-primary/5 text-primary" : "border-border bg-background hover:border-muted-foreground/40"}`}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+
+      {paymentMethod === "bank" && (
+        <div className="mb-4 rounded-xl border border-primary/20 bg-primary/5 p-3 text-sm text-muted-foreground">
+          <p className="font-semibold text-foreground">{t("donate.paymentBankDetails")}</p>
+          <div className="mt-2 space-y-1">
+            <p><span className="font-medium text-foreground">{t("donate.accountName")}:</span> {t("donate.accountNameValue")}</p>
+            <p><span className="font-medium text-foreground">{t("donate.accountNo")}:</span> {t("donate.accountNoValue")}</p>
+            <p><span className="font-medium text-foreground">{t("donate.bankName")}:</span> {t("donate.bankNameValue")}</p>
+            <p><span className="font-medium text-foreground">{t("donate.routing")}:</span> {t("donate.routingValue")}</p>
+          </div>
+        </div>
+      )}
+      {paymentMethod && paymentMethod !== "bank" && (
+        <div className="mb-4 rounded-xl border border-dashed border-border bg-background/70 p-3 text-sm text-muted-foreground">
+          <p className="font-medium text-foreground">{t("donate.paymentComingSoon")}</p>
+          <p className="mt-1">{paymentMethod === "bkash" ? t("donate.paymentBkashSoon") : t("donate.paymentNagadSoon")}</p>
+        </div>
+      )}
+
       {error && (
         <p className="text-xs text-destructive mb-3" role="alert">{error}</p>
       )}
 
       <button
         type="submit"
-        disabled={loading}
+        disabled={loading || !paymentMethod || paymentMethod !== "bank"}
         className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-60"
       >
         {loading ? (
