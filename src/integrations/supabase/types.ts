@@ -54,8 +54,6 @@ export type Database = {
           id: string
           recurrence: string
           status: string
-          stripe_payment_intent: string | null
-          stripe_session_id: string | null
         }
         Insert: {
           amount_cents: number
@@ -69,8 +67,6 @@ export type Database = {
           id?: string
           recurrence?: string
           status?: string
-          stripe_payment_intent?: string | null
-          stripe_session_id?: string | null
         }
         Update: {
           amount_cents?: number
@@ -84,8 +80,6 @@ export type Database = {
           id?: string
           recurrence?: string
           status?: string
-          stripe_payment_intent?: string | null
-          stripe_session_id?: string | null
         }
         Relationships: []
       }

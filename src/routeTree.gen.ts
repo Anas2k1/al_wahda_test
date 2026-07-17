@@ -24,7 +24,6 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DonateSuccessRouteImport } from './routes/donate.success'
 import { Route as DonateCancelRouteImport } from './routes/donate.cancel'
-import { Route as ApiPublicStripeWebhookRouteImport } from './routes/api/public/stripe-webhook'
 
 const VolunteerRoute = VolunteerRouteImport.update({
   id: '/volunteer',
@@ -101,11 +100,6 @@ const DonateCancelRoute = DonateCancelRouteImport.update({
   path: '/cancel',
   getParentRoute: () => DonateRoute,
 } as any)
-const ApiPublicStripeWebhookRoute = ApiPublicStripeWebhookRouteImport.update({
-  id: '/api/public/stripe-webhook',
-  path: '/api/public/stripe-webhook',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -123,7 +117,6 @@ export interface FileRoutesByFullPath {
   '/volunteer': typeof VolunteerRoute
   '/donate/cancel': typeof DonateCancelRoute
   '/donate/success': typeof DonateSuccessRoute
-  '/api/public/stripe-webhook': typeof ApiPublicStripeWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -141,7 +134,6 @@ export interface FileRoutesByTo {
   '/volunteer': typeof VolunteerRoute
   '/donate/cancel': typeof DonateCancelRoute
   '/donate/success': typeof DonateSuccessRoute
-  '/api/public/stripe-webhook': typeof ApiPublicStripeWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -160,7 +152,6 @@ export interface FileRoutesById {
   '/volunteer': typeof VolunteerRoute
   '/donate/cancel': typeof DonateCancelRoute
   '/donate/success': typeof DonateSuccessRoute
-  '/api/public/stripe-webhook': typeof ApiPublicStripeWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -180,7 +171,6 @@ export interface FileRouteTypes {
     | '/volunteer'
     | '/donate/cancel'
     | '/donate/success'
-    | '/api/public/stripe-webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -198,7 +188,6 @@ export interface FileRouteTypes {
     | '/volunteer'
     | '/donate/cancel'
     | '/donate/success'
-    | '/api/public/stripe-webhook'
   id:
     | '__root__'
     | '/'
@@ -216,7 +205,6 @@ export interface FileRouteTypes {
     | '/volunteer'
     | '/donate/cancel'
     | '/donate/success'
-    | '/api/public/stripe-webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -233,7 +221,6 @@ export interface RootRouteChildren {
   ProgramsRoute: typeof ProgramsRoute
   TermsRoute: typeof TermsRoute
   VolunteerRoute: typeof VolunteerRoute
-  ApiPublicStripeWebhookRoute: typeof ApiPublicStripeWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -343,13 +330,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DonateCancelRouteImport
       parentRoute: typeof DonateRoute
     }
-    '/api/public/stripe-webhook': {
-      id: '/api/public/stripe-webhook'
-      path: '/api/public/stripe-webhook'
-      fullPath: '/api/public/stripe-webhook'
-      preLoaderRoute: typeof ApiPublicStripeWebhookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -380,7 +360,6 @@ const rootRouteChildren: RootRouteChildren = {
   ProgramsRoute: ProgramsRoute,
   TermsRoute: TermsRoute,
   VolunteerRoute: VolunteerRoute,
-  ApiPublicStripeWebhookRoute: ApiPublicStripeWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { useServerFn } from "@tanstack/react-start";
-import { ArrowRight, Loader2, Heart } from "lucide-react";
-import { createDonationCheckout } from "@/lib/donations.functions";
+import { ArrowRight, Heart } from "lucide-react";
 import { useLanguage } from "./language";
 
 const FUND_KEYS = ["qd.f.general", "qd.f.education", "qd.f.water", "qd.f.relief", "qd.f.orphan"] as const;
@@ -10,12 +8,13 @@ type Recurrence = "one_time" | "monthly" | "weekly";
 
 export function QuickDonate() {
   const { t } = useLanguage();
-  const checkout = useServerFn(createDonationCheckout);
   const [fundIdx, setFundIdx] = useState(0);
   const [recurrence, setRecurrence] = useState<Recurrence>("one_time");
   const [amount, setAmount] = useState<number>(500);
   const [custom, setCustom] = useState<string>("");
   const [paymentMethod, setPaymentMethod] = useState<"bank" | "bkash" | "nagad" | null>(null);
+  const [paymentMethodMessage, setPaymentMethodMessage] = useState<string | null>(null);
+  const [infoMessage, setInfoMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -24,10 +23,12 @@ export function QuickDonate() {
     setError(null);
     if (!paymentMethod) return;
     if (paymentMethod !== "bank") {
-      const comingSoonMessage = paymentMethod === "bkash"
-        ? `${t("donate.paymentComingSoon")} — ${t("donate.paymentBkashSoon")}`
-        : `${t("donate.paymentComingSoon")} — ${t("donate.paymentNagadSoon")}`;
-      setError(comingSoonMessage);
+      setPaymentMethodMessage(
+        paymentMethod === "bkash"
+          ? `${t("donate.paymentComingSoon")} — ${t("donate.paymentBkashSoon")}`
+          : `${t("donate.paymentComingSoon")} — ${t("donate.paymentNagadSoon")}`,
+      );
+      setInfoMessage(null);
       return;
     }
     const finalAmount = custom ? Number(custom) : amount;
@@ -35,22 +36,9 @@ export function QuickDonate() {
       setError(t("qd.errMin"));
       return;
     }
-    setLoading(true);
-    try {
-      const res = await checkout({
-        data: {
-          fund: t(FUND_KEYS[fundIdx]),
-          amount: Math.round(finalAmount),
-          currency: "bdt",
-          recurrence,
-          anonymous: false,
-        },
-      });
-      if (res?.url) window.location.href = res.url;
-    } catch (err) {
-      setError(err instanceof Error ? err.message : t("qd.errGeneric"));
-      setLoading(false);
-    }
+    setPaymentMethodMessage(null);
+    setInfoMessage(t("donate.bankTransferInfo"));
+    setLoading(false);
   }
 
   return (
@@ -142,13 +130,36 @@ export function QuickDonate() {
           <button
             key={option.value}
             type="button"
-            onClick={() => setPaymentMethod(option.value as typeof paymentMethod)}
+            onClick={() => {
+              setPaymentMethod(option.value as typeof paymentMethod);
+              if (option.value === "bank") {
+                setPaymentMethodMessage(null);
+              } else {
+                setPaymentMethodMessage(
+                  option.value === "bkash"
+                    ? `${t("donate.paymentComingSoon")} — ${t("donate.paymentBkashSoon")}`
+                    : `${t("donate.paymentComingSoon")} — ${t("donate.paymentNagadSoon")}`,
+                );
+              }
+            }}
             className={`rounded-lg border px-2.5 py-2 text-xs font-medium transition-colors ${paymentMethod === option.value ? "border-primary bg-primary/5 text-primary" : "border-border bg-background hover:border-muted-foreground/40"}`}
           >
             {option.label}
           </button>
         ))}
       </div>
+
+      {paymentMethodMessage && (
+        <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
+          {paymentMethodMessage}
+        </div>
+      )}
+
+      {infoMessage && (
+        <div className="mb-4 rounded-xl border border-primary/20 bg-primary/5 p-3 text-sm text-primary-foreground">
+          {infoMessage}
+        </div>
+      )}
 
       {paymentMethod === "bank" && (
         <div className="mb-4 rounded-xl border border-primary/20 bg-primary/5 p-3 text-sm text-muted-foreground">
@@ -159,12 +170,6 @@ export function QuickDonate() {
             <p><span className="font-medium text-foreground">{t("donate.bankName")}:</span> {t("donate.bankNameValue")}</p>
             <p><span className="font-medium text-foreground">{t("donate.routing")}:</span> {t("donate.routingValue")}</p>
           </div>
-        </div>
-      )}
-      {paymentMethod && paymentMethod !== "bank" && (
-        <div className="mb-4 rounded-xl border border-dashed border-border bg-background/70 p-3 text-sm text-muted-foreground">
-          <p className="font-medium text-foreground">{t("donate.paymentComingSoon")}</p>
-          <p className="mt-1">{paymentMethod === "bkash" ? t("donate.paymentBkashSoon") : t("donate.paymentNagadSoon")}</p>
         </div>
       )}
 
@@ -189,7 +194,7 @@ export function QuickDonate() {
         )}
       </button>
       <p className="mt-3 text-[11px] text-center text-muted-foreground">
-        {t("qd.stripe")}
+        {t("qd.bankTransfer")}
       </p>
     </form>
   );

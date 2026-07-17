@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 
 import { toast } from "sonner";
 import { Heart, Lock } from "lucide-react";
 import { PageShell, PageHeader } from "@/lib/site/PageShell";
 import { donationFunds } from "@/lib/site/site-config";
-import { createDonationCheckout } from "@/lib/donations.functions";
 import { useLanguage } from "@/lib/site/language";
 
 export const Route = createFileRoute("/donate")({
@@ -25,7 +23,6 @@ const presets = [25, 50, 100, 250, 500];
 
 function DonatePage() {
   const { t } = useLanguage();
-  const checkout = useServerFn(createDonationCheckout);
 
   const [fund, setFund] = useState<string>(donationFunds[0].id);
   const [amount, setAmount] = useState<number>(50);
@@ -36,6 +33,8 @@ function DonatePage() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<"bank" | "bkash" | "nagad" | null>(null);
+  const [paymentMethodMessage, setPaymentMethodMessage] = useState<string | null>(null);
+  const [infoMessage, setInfoMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const finalAmount = custom ? Number(custom) : amount;
@@ -47,7 +46,8 @@ function DonatePage() {
       const comingSoonMessage = paymentMethod === "bkash"
         ? `${t("donate.paymentComingSoon")} — ${t("donate.paymentBkashSoon")}`
         : `${t("donate.paymentComingSoon")} — ${t("donate.paymentNagadSoon")}`;
-      toast.info(comingSoonMessage);
+      setPaymentMethodMessage(comingSoonMessage);
+      setInfoMessage(null);
       return;
     }
     if (!finalAmount || finalAmount < 1) {
@@ -58,26 +58,9 @@ function DonatePage() {
       toast.error(t("donate.errEmail"));
       return;
     }
-    setLoading(true);
-    try {
-      const { url } = await checkout({
-        data: {
-          fund: donationFunds.find((f) => f.id === fund)?.label ?? fund,
-          amount: Math.round(finalAmount),
-          currency: "bdt",
-          recurrence,
-          donor_name: anonymous ? undefined : name || undefined,
-          donor_email: anonymous ? undefined : email || undefined,
-          donor_phone: anonymous ? undefined : phone || undefined,
-          anonymous,
-        },
-      });
-      window.location.href = url;
-    } catch (err) {
-      const msg = (err as Error).message || t("donate.errCheckout");
-      toast.error(msg);
-      setLoading(false);
-    }
+    setPaymentMethodMessage(null);
+    setInfoMessage(t("donate.bankTransferInfo"));
+    setLoading(false);
   }
 
   return (
@@ -155,13 +138,36 @@ function DonatePage() {
                 <button
                   key={option.value}
                   type="button"
-                  onClick={() => setPaymentMethod(option.value as typeof paymentMethod)}
+                  onClick={() => {
+                    setPaymentMethod(option.value as typeof paymentMethod);
+                    if (option.value === "bank") {
+                      setPaymentMethodMessage(null);
+                    } else {
+                      setPaymentMethodMessage(
+                        option.value === "bkash"
+                          ? `${t("donate.paymentComingSoon")} — ${t("donate.paymentBkashSoon")}`
+                          : `${t("donate.paymentComingSoon")} — ${t("donate.paymentNagadSoon")}`,
+                      );
+                    }
+                  }}
                   className={`rounded-lg border px-3 py-3 text-sm font-medium transition-all ${paymentMethod === option.value ? "border-primary bg-primary/5 text-primary" : "border-border bg-background hover:border-muted-foreground/40"}`}
                 >
                   {option.label}
                 </button>
               ))}
             </div>
+
+            {paymentMethodMessage && (
+              <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                {paymentMethodMessage}
+              </div>
+            )}
+
+            {infoMessage && (
+              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3 text-sm text-primary-foreground">
+                {infoMessage}
+              </div>
+            )}
 
             {paymentMethod === "bank" && (
               <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-4 space-y-2">
@@ -193,7 +199,7 @@ function DonatePage() {
 
           <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
             <Lock className="size-3" />
-            {t("donate.stripe")}
+            {t("donate.paymentBankDetails")}
           </p>
         </form>
 

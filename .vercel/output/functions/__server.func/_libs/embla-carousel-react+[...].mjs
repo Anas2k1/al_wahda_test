@@ -1,4 +1,4 @@
-import { i as __toESM } from "../_runtime.mjs";
+import { r as __toESM } from "../_runtime.mjs";
 import { n as require_react } from "./@radix-ui/react-compose-refs+[...].mjs";
 import { t as EmblaCarousel } from "./embla-carousel.mjs";
 //#region node_modules/embla-carousel-reactive-utils/esm/embla-carousel-reactive-utils.esm.js

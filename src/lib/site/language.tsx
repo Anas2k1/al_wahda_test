@@ -316,7 +316,7 @@ export const translations: Dict = {
   "donate.anon": { en: "Donate anonymously", bn: "নাম প্রকাশ না করে দান করুন" },
   "donate.button": { en: "Donate", bn: "দান করুন" },
   "donate.redirect": { en: "Redirecting to secure checkout…", bn: "নিরাপদ চেকআউটে যাচ্ছে…" },
-  "donate.stripe": { en: "Secure payment processing by Stripe.", bn: "স্ট্রাইপ দ্বারা নিরাপদ পেমেন্ট।" },
+  "donate.bankTransferInfo": { en: "Please complete the donation via the bank details shown above.", bn: "অনুগ্রহ করে উপরে প্রদর্শিত ব্যাংক বিবরণ ব্যবহার করে দান সম্পন্ন করুন।" },
   "donate.where": { en: "Where your money goes", bn: "আপনার অর্থ কোথায় যায়" },
   "donate.direct": { en: "direct program spending", bn: "সরাসরি কর্মসূচি ব্যয়" },
   "donate.opsGov": { en: "operations & governance", bn: "পরিচালনা ও সুশাসন" },
@@ -370,8 +370,8 @@ export const translations: Dict = {
   },
   "privacy.h1": { en: "What we collect", bn: "আমরা কী সংগ্রহ করি" },
   "privacy.p1": {
-    en: "When you donate or fill in a form on this site, we collect the information you provide: your name, email, phone, and the contents of any message. Payment processing is handled by Stripe; we never see or store your card details.",
-    bn: "যখন আপনি দান করেন বা এই সাইটে কোনো ফর্ম পূরণ করেন, আমরা আপনার প্রদত্ত তথ্য সংগ্রহ করি: নাম, ইমেইল, ফোন এবং যেকোনো বার্তার বিষয়বস্তু। পেমেন্ট প্রসেসিং স্ট্রাইপের মাধ্যমে হয়; আমরা কখনো আপনার কার্ডের তথ্য দেখি বা সংরক্ষণ করি না।",
+    en: "When you donate or fill in a form on this site, we collect the information you provide: your name, email, phone, and the contents of any message. Donations are processed by bank transfer; we never see or store your card details.",
+    bn: "যখন আপনি দান করেন বা এই সাইটে কোনো ফর্ম পূরণ করেন, আমরা আপনার প্রদত্ত তথ্য সংগ্রহ করি: নাম, ইমেইল, ফোন এবং যেকোনো বার্তার বিষয়বস্তু। অনুদান ব্যাংক স্থানান্তরের মাধ্যমে প্রক্রিয়াজাত হয়; আমরা কখনো আপনার কার্ডের তথ্য দেখি বা সংরক্ষণ করি না।",
   },
   "privacy.h2": { en: "How we use it", bn: "আমরা কীভাবে ব্যবহার করি" },
   "privacy.p2": {
@@ -399,8 +399,8 @@ export const translations: Dict = {
   },
   "terms.h2": { en: "Donations & refunds", bn: "অনুদান ও ফেরত" },
   "terms.p2": {
-    en: "Donations are processed through Stripe. If a donation is made in error, contact us within 14 days at {email} and we will issue a refund where program disbursement has not already occurred.",
-    bn: "অনুদান স্ট্রাইপের মাধ্যমে প্রক্রিয়াজাত হয়। যদি ভুল করে অনুদান করা হয়, তবে ১৪ দিনের মধ্যে {email}-এ আমাদের সাথে যোগাযোগ করুন এবং প্রোগ্রামে অর্থ বিতরণ না হলে আমরা ফেরত প্রদান করব।",
+    en: "Donations are processed through bank transfer. If a donation is made in error, contact us within 14 days at {email} and we will issue a refund where program disbursement has not already occurred.",
+    bn: "অনুদান ব্যাংক স্থানান্তরের মাধ্যমে প্রক্রিয়াজাত হয়। যদি ভুল করে অনুদান করা হয়, তবে ১৪ দিনের মধ্যে {email}-এ আমাদের সাথে যোগাযোগ করুন এবং প্রোগ্রামে অর্থ বিতরণ না হলে আমরা ফেরত প্রদান করব।",
   },
   "terms.h3": { en: "Content", bn: "কন্টেন্ট" },
   "terms.p3": {
@@ -457,7 +457,7 @@ export const translations: Dict = {
   "qd.donate": { en: "Donate", bn: "দান করুন" },
   "qd.mo": { en: "mo", bn: "মাস" },
   "qd.wk": { en: "wk", bn: "সপ্তাহ" },
-  "qd.stripe": { en: "Secure checkout via Stripe · 100% tax-deductible", bn: "স্ট্রাইপের মাধ্যমে নিরাপদ চেকআউট · ১০০% ট্যাক্স-ছাড়যোগ্য" },
+  "qd.bankTransfer": { en: "Bank transfer donation · 100% tax-deductible", bn: "ব্যাংক স্থানান্তরভিত্তিক অনুদান · ১০০% ট্যাক্স-ছাড়যোগ্য" },
   "qd.errMin": { en: "Please choose an amount of at least ৳1.", bn: "কমপক্ষে ৳১ পরিমাণ নির্বাচন করুন।" },
   "qd.errGeneric": { en: "Something went wrong. Please try again.", bn: "কিছু সমস্যা হয়েছে। আবার চেষ্টা করুন।" },
   "qd.f.general": { en: "Where most needed", bn: "যেখানে সবচেয়ে বেশি প্রয়োজন" },

@@ -281,12 +281,5 @@ function errorResponse(error, debug, errHeaders) {
 		headers
 	});
 }
-function getRequestHost(event, opts = {}) {
-	if (opts.xForwardedHost) {
-		const xForwardedHost = (event.req.headers.get("x-forwarded-host") || "").split(",").shift()?.trim();
-		if (xForwardedHost) return xForwardedHost;
-	}
-	return event.req.headers.get("host") || "";
-}
 //#endregion
-export { getRequestHost as n, toResponse as r, H3Event as t };
+export { toResponse as n, H3Event as t };
